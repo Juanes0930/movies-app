@@ -1,19 +1,28 @@
-import { NgModule } from "@angular/core";
-import { NgModel } from "@angular/forms";
+import { Component, makeEnvironmentProviders, NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
+import { MoviesListComponent } from "./components/movies/movies-list/movies-list.component";
+
+
+
+
 
 
 const routes : Routes = [
-{
-    path : '',
-    pathMatch : 'full',
-    redirectTo : 'home'
-},
+
 {
     path : 'home',
-    component : HomeComponent
-    
+    component : HomeComponent  
+},
+{
+  path : 'movies',
+  component : MoviesListComponent  
+},
+
+{
+    path : '**',
+    pathMatch : 'full',
+    redirectTo : 'home'
 }
 
 ]
